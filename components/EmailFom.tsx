@@ -188,7 +188,7 @@ export default function EmailForm() {
             </label>
             <input
               autoComplete="email"
-              className="block w-full rounded-lg border-2 border-slate-200 px-4 py-2.5 text-[var(--color-text)] placeholder:text-slate-400 focus:border-[var(--color-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-light)] disabled:opacity-50"
+              className="block w-full rounded-[var(--radius-md)] border-2 border-slate-200 px-4 py-2.5 text-[var(--color-text)] placeholder:text-slate-400 focus:border-[var(--color-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-light)] disabled:opacity-50"
               pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
               id="email-address"
               name="email"
@@ -208,7 +208,7 @@ export default function EmailForm() {
             </label>
             <div className="relative">
               <input
-                className="block w-full rounded-lg border-2 border-slate-200 pl-4 pr-12 py-2.5 text-[var(--color-text)] placeholder:text-slate-400 focus:border-[var(--color-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-light)] disabled:opacity-50"
+                className="block w-full rounded-[var(--radius-md)] border-2 border-slate-200 pl-4 pr-12 py-2.5 text-[var(--color-text)] placeholder:text-slate-400 focus:border-[var(--color-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-light)] disabled:opacity-50"
                 id="city"
                 name="city"
                 placeholder="City (optional)"
@@ -231,7 +231,7 @@ export default function EmailForm() {
             {showSuggestions && suggestions.length > 0 && (
               <div 
                 ref={suggestionsRef}
-                className="absolute z-10 w-full mt-1 bg-white rounded-lg border border-slate-200 shadow-lg max-h-60 overflow-auto"
+                className="absolute z-10 w-full mt-1 bg-white rounded-[var(--radius-md)] border border-slate-200 shadow-lg max-h-60 overflow-auto"
               >
                 {suggestions.map((city, index) => (
                   <button
@@ -249,7 +249,7 @@ export default function EmailForm() {
 
           {/* Submit Button */}
           <button
-            className="w-full rounded-lg bg-[var(--color-primary)] px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[var(--color-primary-dark)] disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full rounded-[var(--radius-md)] bg-[var(--color-primary)] px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[var(--color-primary-dark)] disabled:opacity-50 disabled:cursor-not-allowed"
             type="submit"
             disabled={formState.isSubmitting || formState.isLocating}
           >

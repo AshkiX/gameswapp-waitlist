@@ -10,6 +10,8 @@
   --color-text: #2D3748;
   --color-text-light: #4A5568;
   --color-surface: rgba(255, 255, 255, 0.7);
+  --radius-lg: 1rem;
+  --radius-md: 0.75rem;
 }
 
 @layer base {
@@ -84,6 +86,7 @@
                 0 4px 6px -1px rgba(255, 107, 107, 0.02);
     backdrop-filter: blur(8px);
     transform: translateY(0) scale(1);
+    border-radius: var(--radius-lg);
   }
 
   .hover-card:hover {
@@ -106,6 +109,11 @@
     stroke-dasharray: 300;
     stroke-dashoffset: 300;
     animation: dash 1.5s ease forwards;
+  }
+
+  .image-container {
+    @apply relative overflow-hidden;
+    border-radius: var(--radius-md);
   }
 }
 

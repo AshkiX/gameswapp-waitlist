@@ -14,10 +14,10 @@ export default function Home() {
           <div className="flex flex-col gap-12 p-8 md:p-12 max-w-xl mx-auto relative">
             {/* List Games */}
             <div className="group">
-              <div className="relative p-6 rounded-2xl hover-card transition-all duration-300">
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[var(--color-primary-light)] to-transparent opacity-5" />
+              <div className="relative p-6 hover-card transition-all duration-300">
+                <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary-light)] to-transparent opacity-5 rounded-[var(--radius-lg)]" />
                 <div className="flex items-start gap-6 card-content">
-                  <div className="w-24 h-24 md:w-28 md:h-28 relative shrink-0 transition-all duration-300 group-hover:scale-105">
+                  <div className="w-24 h-24 md:w-28 md:h-28 relative shrink-0 transition-all duration-300 group-hover:scale-105 image-container bg-white/50 p-4">
                     <Image
                       src="/shelf.png"
                       alt="Board game shelf illustration"
@@ -39,10 +39,10 @@ export default function Home() {
 
             {/* Browse Games */}
             <div className="group">
-              <div className="relative p-6 rounded-2xl hover-card transition-all duration-300">
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[var(--color-primary-light)] to-transparent opacity-5" />
+              <div className="relative p-6 hover-card transition-all duration-300">
+                <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary-light)] to-transparent opacity-5 rounded-[var(--radius-lg)]" />
                 <div className="flex items-start gap-6 card-content">
-                  <div className="w-24 h-24 md:w-28 md:h-28 relative shrink-0 transition-all duration-300 group-hover:scale-105">
+                  <div className="w-24 h-24 md:w-28 md:h-28 relative shrink-0 transition-all duration-300 group-hover:scale-105 image-container bg-white/50 p-4">
                     <Image
                       src="/map.png"
                       alt="Map with board game locations"
@@ -63,10 +63,10 @@ export default function Home() {
 
             {/* Swap Games */}
             <div className="group">
-              <div className="relative p-6 rounded-2xl hover-card transition-all duration-300">
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[var(--color-primary-light)] to-transparent opacity-5" />
+              <div className="relative p-6 hover-card transition-all duration-300">
+                <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary-light)] to-transparent opacity-5 rounded-[var(--radius-lg)]" />
                 <div className="flex items-start gap-6 card-content">
-                  <div className="w-24 h-24 md:w-28 md:h-28 relative shrink-0 transition-all duration-300 group-hover:scale-105">
+                  <div className="w-24 h-24 md:w-28 md:h-28 relative shrink-0 transition-all duration-300 group-hover:scale-105 image-container bg-white/50 p-4">
                     <Image
                       src="/exchange.png"
                       alt="People exchanging board games"
