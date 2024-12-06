@@ -1,6 +1,7 @@
 import EmailForm from "@/components/EmailFom";
 import Image from "next/image";
 import { Toaster } from "react-hot-toast";
+import Card from "@/components/Card";
 
 export default function Home() {
   return (
@@ -12,84 +13,29 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-background)] via-transparent to-[var(--color-background)] pointer-events-none" />
           
           <div className="flex flex-col gap-12 p-8 md:p-12 max-w-xl mx-auto relative">
-            {/* List Games */}
-            <div className="group">
-              <div className="relative p-6 hover-card transition-all duration-300">
-                <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary-light)] to-transparent opacity-5 rounded-[var(--radius-lg)]" />
-                <div className="flex gap-6 min-h-[8rem] card-content">
-                  <div className="w-32 h-32 relative shrink-0 image-container bg-white/50 p-4 rounded-[var(--radius-md)]">
-                    <Image
-                      src="/shelf.png"
-                      alt="Board game shelf illustration"
-                      fill
-                      className="object-contain"
-                      priority
-                    />
-                  </div>
-                  <div className="flex flex-col justify-between py-1">
-                    <div>
-                      <span className="step-label">Step 1</span>
-                      <h2 className="heading-lg mb-3">List Games You Don't Play</h2>
-                    </div>
-                    <p className="body-text">
-                      Look through your games. Pick out the ones you don't play anymore.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <Card
+              step={1}
+              title="List Games You Don't Play"
+              description="Look through your games. Pick out the ones you don't play anymore."
+              imageSrc="/shelf.png"
+              imageAlt="Board game shelf illustration"
+            />
 
-            {/* Browse Games */}
-            <div className="group">
-              <div className="relative p-6 hover-card transition-all duration-300">
-                <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary-light)] to-transparent opacity-5 rounded-[var(--radius-lg)]" />
-                <div className="flex gap-6 min-h-[8rem] card-content">
-                  <div className="w-32 h-32 relative shrink-0 image-container bg-white/50 p-4 rounded-[var(--radius-md)]">
-                    <Image
-                      src="/map.png"
-                      alt="Map with board game locations"
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                  <div className="flex flex-col justify-between py-1">
-                    <div>
-                      <span className="step-label">Step 2</span>
-                      <h2 className="heading-lg mb-3">Browse Game Offers</h2>
-                    </div>
-                    <p className="body-text">
-                      Check out games near you and get matched!
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <Card
+              step={2}
+              title="Browse Game Offers"
+              description="Check out games near you and get matched!"
+              imageSrc="/map.png"
+              imageAlt="Map with board game locations"
+            />
 
-            {/* Swap Games */}
-            <div className="group">
-              <div className="relative p-6 hover-card transition-all duration-300">
-                <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary-light)] to-transparent opacity-5 rounded-[var(--radius-lg)]" />
-                <div className="flex gap-6 min-h-[8rem] card-content">
-                  <div className="w-32 h-32 relative shrink-0 image-container bg-white/50 p-4 rounded-[var(--radius-md)]">
-                    <Image
-                      src="/exchange.png"
-                      alt="People exchanging board games"
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                  <div className="flex flex-col justify-between py-1">
-                    <div>
-                      <span className="step-label">Step 3</span>
-                      <h2 className="heading-lg mb-3">Swap Games & Play</h2>
-                    </div>
-                    <p className="body-text">
-                      Meet with a neighbor and swap your games!
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <Card
+              step={3}
+              title="Swap Games & Play"
+              description="Meet with a neighbor and swap your games!"
+              imageSrc="/exchange.png"
+              imageAlt="People exchanging board games"
+            />
           </div>
         </div>
 
