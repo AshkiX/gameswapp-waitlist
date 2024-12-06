@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-primary: #FF6B6B;
+  --color-primary-light: #FFE4E4;
+  --color-primary-dark: #FF5252;
+  --color-background: #FFF5EB;
+  --color-text: #2D3748;
+  --color-text-light: #4A5568;
+  --color-surface: rgba(255, 255, 255, 0.7);
+}
+
 @layer base {
   html,
   body {
@@ -15,21 +25,33 @@
 
 @layer utilities {
   .pattern-grid {
-    background-color: #FFF5EB;
+    background-color: var(--color-background);
     background-image: 
-      linear-gradient(rgba(255, 107, 107, 0.08) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 107, 107, 0.08) 1px, transparent 1px);
+      linear-gradient(var(--color-primary-light) 1px, transparent 1px),
+      linear-gradient(90deg, var(--color-primary-light) 1px, transparent 1px);
     background-size: 32px 32px;
     background-position: center center;
   }
 
   .pattern-dots {
-    background-color: #FFF5EB;
+    background-color: var(--color-background);
     background-image: 
-      radial-gradient(rgba(255, 107, 107, 0.15) 2px, transparent 2px),
-      radial-gradient(rgba(255, 107, 107, 0.1) 2px, transparent 2px);
+      radial-gradient(color-mix(in srgb, var(--color-primary) 30%, transparent) 1.5px, transparent 1.5px),
+      radial-gradient(var(--color-primary-light) 3px, transparent 3px);
     background-size: 32px 32px;
     background-position: 0 0, 16px 16px;
+  }
+
+  .hover-card {
+    @apply transition-all duration-300;
+    background: var(--color-surface);
+    box-shadow: 0 4px 6px -1px rgba(255, 107, 107, 0.05), 
+                0 2px 4px -1px rgba(255, 107, 107, 0.1);
+  }
+
+  .hover-card:hover {
+    box-shadow: 0 10px 15px -3px rgba(255, 107, 107, 0.1), 
+                0 4px 6px -2px rgba(255, 107, 107, 0.05);
   }
 }
 
