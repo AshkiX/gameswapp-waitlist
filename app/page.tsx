@@ -25,9 +25,9 @@ export default function Home() {
                 />
               </div>
               <div className="pt-2">
-                <span className="text-sm font-medium text-[var(--color-primary)] mb-2 block">Step 1</span>
-                <h2 className="text-2xl font-bold mb-3 text-[var(--color-text)]">List Your Extra Games</h2>
-                <p className="text-[var(--color-text-light)] leading-relaxed">
+                <span className="step-label">Step 1</span>
+                <h2 className="heading-lg mb-3">List Your Extra Games</h2>
+                <p className="body-text">
                   Look through your games. Pick out the ones you don't play anymore.
                 </p>
               </div>
@@ -44,9 +44,9 @@ export default function Home() {
                 />
               </div>
               <div className="pt-2">
-                <span className="text-sm font-medium text-[#FF6B6B] mb-2 block">Step 2</span>
-                <h2 className="text-2xl font-bold mb-3 text-zinc-900">Browse Game Offers</h2>
-                <p className="text-zinc-600 leading-relaxed">
+                <span className="step-label">Step 2</span>
+                <h2 className="heading-lg mb-3">Browse Game Offers</h2>
+                <p className="body-text">
                   Check out games near you and get matched!
                 </p>
               </div>
@@ -63,9 +63,9 @@ export default function Home() {
                 />
               </div>
               <div className="pt-2">
-                <span className="text-sm font-medium text-[#FF6B6B] mb-2 block">Step 3</span>
-                <h2 className="text-2xl font-bold mb-3 text-zinc-900">Swap Games & Play</h2>
-                <p className="text-zinc-600 leading-relaxed">
+                <span className="step-label">Step 3</span>
+                <h2 className="heading-lg mb-3">Swap Games & Play</h2>
+                <p className="body-text">
                   Meet with a neighbor and swap your games!
                 </p>
               </div>
@@ -74,12 +74,12 @@ export default function Home() {
         </div>
 
         <main className="flex flex-col gap-8 justify-center px-6 md:px-16 py-12">
-          <h1 className="font-semibold tracking-tight text-[var(--color-text)] text-3xl leading-tight md:text-4xl max-w-lg">
+          <h1 className="heading-xl max-w-lg">
             Trade, Play, Repeat
             <br />
             Your <span className="text-[var(--color-primary)] font-bold">Board Game Exchange</span> Launches Soon!
           </h1>
-          <p className="text-[var(--color-text-light)]">
+          <p className="body-text">
             Your next favorite game is in someone's closet. Connect and swap with GameSwapp.
           </p>
 

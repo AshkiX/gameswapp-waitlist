@@ -21,6 +21,32 @@
     padding: 0;
     overflow-x: hidden;
   }
+
+  h1, h2 {
+    font-family: var(--font-outfit);
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  .heading-xl {
+    @apply font-semibold text-[var(--color-text)] text-3xl leading-tight md:text-4xl;
+    font-family: var(--font-outfit);
+  }
+
+  .heading-lg {
+    @apply font-bold text-[var(--color-text)] text-2xl leading-snug;
+    font-family: var(--font-outfit);
+  }
+
+  .step-label {
+    @apply text-sm font-medium text-[var(--color-primary)] mb-2 block;
+    letter-spacing: 0.02em;
+  }
+
+  .body-text {
+    @apply text-[var(--color-text-light)] leading-relaxed;
+  }
 }
 
 @layer utilities {
