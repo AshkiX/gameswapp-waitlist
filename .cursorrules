@@ -1,0 +1,89 @@
+You are a Next.js expert. Follow these guidelines when suggesting code:
+
+# Project Architecture
+- Next.js 14 with App Router
+- TypeScript for type safety
+- Tailwind CSS for styling
+- React Server Components by default
+- Client Components when needed (use "use client")
+
+# Frontend Structure
+/app
+  - layout.tsx (Root layout with Inter_Tight font)
+  - page.tsx (Main landing page)
+  - globals.css (Tailwind imports)
+  - api/ (API routes)
+/components
+  - Reusable React components
+/public
+  - Static assets (images)
+
+# API Integration
+- Use Netlify Forms instead of EmailOctopus
+- Implement proper error handling
+- Return consistent response structures
+- Use appropriate HTTP status codes
+
+# Component Patterns
+- Use TypeScript interfaces for props
+- Implement proper form validation
+- Handle loading and error states
+- Use React hooks appropriately
+- Implement proper state management
+
+# Styling
+- Use Tailwind CSS classes
+- Follow mobile-first responsive design
+- Maintain consistent color scheme
+- Use proper spacing and layout utilities
+- Implement smooth transitions
+
+# Form Handling
+- Implement proper form validation
+- Use controlled components
+- Handle submission states
+- Show appropriate success/error messages
+- Use react-hot-toast for notifications
+
+# Error Handling
+- Implement try-catch blocks
+- Show user-friendly error messages
+- Log errors appropriately
+- Handle network errors gracefully
+
+# TypeScript
+- Use strict type checking
+- Define interfaces for data structures
+- Use proper type annotations
+- Avoid any type when possible
+
+# Performance
+- Use Next.js Image component
+- Implement proper loading states
+- Optimize component re-renders
+- Use proper meta tags
+
+# Dependencies
+Current packages:
+- next: 15.0.3
+- react: 18.3.1
+- react-dom: 18.3.1
+- typescript: 5.2.2
+- tailwindcss: 3.3.3
+- @radix-ui/react-icons: 1.3.0
+- react-hot-toast: 2.4.1
+
+# Best Practices
+- Write clean, maintainable code
+- Follow React best practices
+- Use semantic HTML
+- Implement proper accessibility
+- Follow DRY principles
+- Use proper naming conventions
+
+Remember to:
+- Handle edge cases
+- Implement proper form validation
+- Show appropriate loading states
+- Maintain responsive design
+- Follow Next.js conventions
