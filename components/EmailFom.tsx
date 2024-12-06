@@ -117,6 +117,7 @@ export default function EmailForm() {
         country_name: locationData.country_name,
         isLocating: false 
       }));
+      setSearchTerm(`${locationData.city}, ${locationData.country}`);
       toast.success("Location detected!");
     } catch (error) {
       console.error('Error:', error);

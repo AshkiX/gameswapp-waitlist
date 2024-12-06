@@ -4,7 +4,7 @@
 
 ## Description:
 
-GameSwapp (gamesw.app) is an upcoming platform that connects board game enthusiasts to swap their unused games with other players. Join our waitlist to be notified when we launch!
+GameSwapp ([gamesw.app](https://gamesw.app)) is an upcoming platform that connects board game enthusiasts to swap their unused games with other players. Join our waitlist to be notified when we launch!
 
 Key Features:
 - Match with your favorite games
