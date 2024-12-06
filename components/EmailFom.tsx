@@ -271,14 +271,6 @@ export default function EmailForm() {
               )}
             </span>
           </button>
-
-          {/* Info Text */}
-          <div className="flex items-center gap-2 text-xs text-slate-500">
-            <InfoCircledIcon className="h-4 w-4 shrink-0" />
-            <p>
-              We will use this data to notify you when we launch in your area.
-            </p>
-          </div>
         </div>
       </form>
     </>

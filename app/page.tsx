@@ -8,7 +8,7 @@ export default function Home() {
       <Toaster />
 
       <section className="min-h-screen w-full grid grid-cols-1 md:grid-cols-12">
-        <div className="md:col-span-5 flex items-center pattern-dots relative overflow-hidden">
+        <div className="md:col-span-5 flex items-center pattern-dots relative overflow-hidden order-2 md:order-1">
           <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-background)] via-transparent to-[var(--color-background)] pointer-events-none" />
           
           <div className="flex flex-col gap-12 p-8 md:p-12 max-w-xl mx-auto relative">
@@ -17,7 +17,7 @@ export default function Home() {
               <div className="relative p-6 hover-card transition-all duration-300">
                 <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary-light)] to-transparent opacity-5 rounded-[var(--radius-lg)]" />
                 <div className="flex gap-6 min-h-[8rem] card-content">
-                  <div className="w-32 h-32 relative shrink-0 image-container bg-white/50 p-4">
+                  <div className="w-32 h-32 relative shrink-0 image-container bg-white/50 p-4 rounded-[var(--radius-md)]">
                     <Image
                       src="/shelf.png"
                       alt="Board game shelf illustration"
@@ -44,7 +44,7 @@ export default function Home() {
               <div className="relative p-6 hover-card transition-all duration-300">
                 <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary-light)] to-transparent opacity-5 rounded-[var(--radius-lg)]" />
                 <div className="flex gap-6 min-h-[8rem] card-content">
-                  <div className="w-32 h-32 relative shrink-0 image-container bg-white/50 p-4">
+                  <div className="w-32 h-32 relative shrink-0 image-container bg-white/50 p-4 rounded-[var(--radius-md)]">
                     <Image
                       src="/map.png"
                       alt="Map with board game locations"
@@ -70,7 +70,7 @@ export default function Home() {
               <div className="relative p-6 hover-card transition-all duration-300">
                 <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary-light)] to-transparent opacity-5 rounded-[var(--radius-lg)]" />
                 <div className="flex gap-6 min-h-[8rem] card-content">
-                  <div className="w-32 h-32 relative shrink-0 image-container bg-white/50 p-4">
+                  <div className="w-32 h-32 relative shrink-0 image-container bg-white/50 p-4 rounded-[var(--radius-md)]">
                     <Image
                       src="/exchange.png"
                       alt="People exchanging board games"
@@ -80,7 +80,7 @@ export default function Home() {
                   </div>
                   <div className="flex flex-col justify-between py-1">
                     <div>
-                      <span className="step-label">Step 2</span>
+                      <span className="step-label">Step 3</span>
                       <h2 className="heading-lg mb-3">Swap Games & Play</h2>
                     </div>
                     <p className="body-text">
@@ -93,7 +93,7 @@ export default function Home() {
           </div>
         </div>
 
-        <main className="md:col-span-7 flex flex-col gap-8 justify-center px-6 md:px-16 py-12">
+        <main className="md:col-span-7 flex flex-col gap-8 justify-center px-6 md:px-16 py-12 order-1 md:order-2">
           <div className="relative">
             <h1 className="heading-xl max-w-2xl">
               <span className="relative inline-block mb-6">
