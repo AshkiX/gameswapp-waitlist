@@ -16,8 +16,8 @@ export default function Home() {
             <div className="group">
               <div className="relative p-6 hover-card transition-all duration-300">
                 <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary-light)] to-transparent opacity-5 rounded-[var(--radius-lg)]" />
-                <div className="flex items-start gap-6 card-content">
-                  <div className="w-24 h-24 md:w-28 md:h-28 relative shrink-0 transition-all duration-300 group-hover:scale-105 image-container bg-white/50 p-4">
+                <div className="flex gap-6 min-h-[8rem] card-content">
+                  <div className="w-32 h-32 relative shrink-0 image-container bg-white/50 p-4">
                     <Image
                       src="/shelf.png"
                       alt="Board game shelf illustration"
@@ -26,9 +26,11 @@ export default function Home() {
                       priority
                     />
                   </div>
-                  <div className="transition-all duration-300">
-                    <span className="step-label">Step 1</span>
-                    <h2 className="heading-lg mb-3">List Your Extra Games</h2>
+                  <div className="flex flex-col justify-between py-1">
+                    <div>
+                      <span className="step-label">Step 1</span>
+                      <h2 className="heading-lg mb-3">List Games You Don't Play</h2>
+                    </div>
                     <p className="body-text">
                       Look through your games. Pick out the ones you don't play anymore.
                     </p>
@@ -41,8 +43,8 @@ export default function Home() {
             <div className="group">
               <div className="relative p-6 hover-card transition-all duration-300">
                 <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary-light)] to-transparent opacity-5 rounded-[var(--radius-lg)]" />
-                <div className="flex items-start gap-6 card-content">
-                  <div className="w-24 h-24 md:w-28 md:h-28 relative shrink-0 transition-all duration-300 group-hover:scale-105 image-container bg-white/50 p-4">
+                <div className="flex gap-6 min-h-[8rem] card-content">
+                  <div className="w-32 h-32 relative shrink-0 image-container bg-white/50 p-4">
                     <Image
                       src="/map.png"
                       alt="Map with board game locations"
@@ -50,9 +52,11 @@ export default function Home() {
                       className="object-contain"
                     />
                   </div>
-                  <div className="transition-all duration-300">
-                    <span className="step-label">Step 2</span>
-                    <h2 className="heading-lg mb-3">Browse Game Offers</h2>
+                  <div className="flex flex-col justify-between py-1">
+                    <div>
+                      <span className="step-label">Step 2</span>
+                      <h2 className="heading-lg mb-3">Browse Game Offers</h2>
+                    </div>
                     <p className="body-text">
                       Check out games near you and get matched!
                     </p>
@@ -65,8 +69,8 @@ export default function Home() {
             <div className="group">
               <div className="relative p-6 hover-card transition-all duration-300">
                 <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary-light)] to-transparent opacity-5 rounded-[var(--radius-lg)]" />
-                <div className="flex items-start gap-6 card-content">
-                  <div className="w-24 h-24 md:w-28 md:h-28 relative shrink-0 transition-all duration-300 group-hover:scale-105 image-container bg-white/50 p-4">
+                <div className="flex gap-6 min-h-[8rem] card-content">
+                  <div className="w-32 h-32 relative shrink-0 image-container bg-white/50 p-4">
                     <Image
                       src="/exchange.png"
                       alt="People exchanging board games"
@@ -74,9 +78,11 @@ export default function Home() {
                       className="object-contain"
                     />
                   </div>
-                  <div className="transition-all duration-300">
-                    <span className="step-label">Step 3</span>
-                    <h2 className="heading-lg mb-3">Swap Games & Play</h2>
+                  <div className="flex flex-col justify-between py-1">
+                    <div>
+                      <span className="step-label">Step 2</span>
+                      <h2 className="heading-lg mb-3">Swap Games & Play</h2>
+                    </div>
                     <p className="body-text">
                       Meet with a neighbor and swap your games!
                     </p>
@@ -112,12 +118,12 @@ export default function Home() {
                 <span className="block">
                   Connecting{' '}
                   <span className="relative inline-block">
-                    <span className="relative z-10 text-[var(--color-primary)] font-bold">
+                    <span className="relative z-10 text-[var(--color-primary-dark)] font-bold">
                       Board Game
                     </span>
                     <span 
-                      className="absolute -bottom-2 left-0 right-0 h-3 bg-[var(--color-primary-light)] 
-                      opacity-50 transform -rotate-1 rounded-full blur-sm"
+                      className="absolute -bottom-2 left-0 right-0 h-3 bg-[var(--color-primary)] 
+                      opacity-40 transform -rotate-2 rounded-full blur-sm"
                     />
                   </span>
                   {' '}Lovers
@@ -125,12 +131,12 @@ export default function Home() {
                 <span className="block">
                   For{' '}
                   <span className="relative inline-block">
-                    <span className="relative z-10 text-[var(--color-primary)] font-bold">
+                    <span className="relative z-10 text-[var(--color-primary-dark)] font-bold">
                       Easy Swaps
                     </span>
                     <span 
-                      className="absolute -bottom-2 left-0 right-0 h-3 bg-[var(--color-primary-light)] 
-                      opacity-50 transform -rotate-1 rounded-full blur-sm"
+                      className="absolute -bottom-2 left-0 right-0 h-3 bg-[var(--color-primary)] 
+                      opacity-40 transform -rotate-2 rounded-full blur-sm"
                     />
                   </span>
                 </span>

@@ -6,7 +6,7 @@
   --color-primary: #FF6B6B;
   --color-primary-light: #FFE4E4;
   --color-primary-dark: #FF5252;
-  --color-background: #FFF5EB;
+  --color-background: #FFE8D1;
   --color-text: #2D3748;
   --color-text-light: #4A5568;
   --color-surface: rgba(255, 255, 255, 0.7);
@@ -42,7 +42,7 @@
   }
 
   .step-label {
-    @apply text-sm font-medium text-[var(--color-primary)] mb-2 block;
+    @apply text-sm font-medium text-[var(--color-primary-dark)] mb-2 block;
     letter-spacing: 0.02em;
   }
 
