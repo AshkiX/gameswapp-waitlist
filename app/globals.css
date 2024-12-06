@@ -13,3 +13,23 @@
   }
 }
 
+@layer utilities {
+  .pattern-grid {
+    background-color: #FFF5EB;
+    background-image: 
+      linear-gradient(rgba(255, 107, 107, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 107, 107, 0.08) 1px, transparent 1px);
+    background-size: 32px 32px;
+    background-position: center center;
+  }
+
+  .pattern-dots {
+    background-color: #FFF5EB;
+    background-image: 
+      radial-gradient(rgba(255, 107, 107, 0.15) 2px, transparent 2px),
+      radial-gradient(rgba(255, 107, 107, 0.1) 2px, transparent 2px);
+    background-size: 32px 32px;
+    background-position: 0 0, 16px 16px;
+  }
+}
+

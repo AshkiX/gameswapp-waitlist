@@ -8,11 +8,13 @@ export default function Home() {
       <Toaster />
 
       <section className="min-h-screen w-full grid grid-cols-1 md:grid-cols-2">
-        <div className="flex items-center bg-[#FFF5EB]">
-          <div className="flex flex-col gap-20 p-8 md:p-16 max-w-xl mx-auto">
+        <div className="flex items-center pattern-dots relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-b from-[#FFF5EB]/50 via-transparent to-[#FFF5EB]/50 pointer-events-none" />
+          
+          <div className="flex flex-col gap-20 p-8 md:p-16 max-w-xl mx-auto relative">
             {/* List Games */}
-            <div className="flex items-start gap-8 group">
-              <div className="w-28 h-28 md:w-32 md:h-32 relative shrink-0 transition-transform duration-300 group-hover:scale-105">
+            <div className="flex items-start gap-8 group hover:translate-x-1 transition-transform duration-300">
+              <div className="w-28 h-28 md:w-32 md:h-32 relative shrink-0 transition-all duration-300 group-hover:scale-105 rounded-2xl bg-white/50 p-4 shadow-sm">
                 <Image
                   src="/shelf.png"
                   alt="Board game shelf illustration"
@@ -22,6 +24,7 @@ export default function Home() {
                 />
               </div>
               <div className="pt-2">
+                <span className="text-sm font-medium text-[#FF6B6B] mb-2 block">Step 1</span>
                 <h2 className="text-2xl font-bold mb-3 text-zinc-900">List Your Extra Games</h2>
                 <p className="text-zinc-600 leading-relaxed">
                   Look through your games. Pick out the ones you don't play anymore.
@@ -30,8 +33,8 @@ export default function Home() {
             </div>
 
             {/* Browse Games */}
-            <div className="flex items-start gap-8 group">
-              <div className="w-28 h-28 md:w-32 md:h-32 relative shrink-0 transition-transform duration-300 group-hover:scale-105">
+            <div className="flex items-start gap-8 group hover:translate-x-1 transition-transform duration-300">
+              <div className="w-28 h-28 md:w-32 md:h-32 relative shrink-0 transition-all duration-300 group-hover:scale-105 rounded-2xl bg-white/50 p-4 shadow-sm">
                 <Image
                   src="/map.png"
                   alt="Map with board game locations"
@@ -40,6 +43,7 @@ export default function Home() {
                 />
               </div>
               <div className="pt-2">
+                <span className="text-sm font-medium text-[#FF6B6B] mb-2 block">Step 2</span>
                 <h2 className="text-2xl font-bold mb-3 text-zinc-900">Browse Game Offers</h2>
                 <p className="text-zinc-600 leading-relaxed">
                   Check out games near you and get matched!
@@ -48,8 +52,8 @@ export default function Home() {
             </div>
 
             {/* Swap Games */}
-            <div className="flex items-start gap-8 group">
-              <div className="w-28 h-28 md:w-32 md:h-32 relative shrink-0 transition-transform duration-300 group-hover:scale-105">
+            <div className="flex items-start gap-8 group hover:translate-x-1 transition-transform duration-300">
+              <div className="w-28 h-28 md:w-32 md:h-32 relative shrink-0 transition-all duration-300 group-hover:scale-105 rounded-2xl bg-white/50 p-4 shadow-sm">
                 <Image
                   src="/exchange.png"
                   alt="People exchanging board games"
@@ -58,6 +62,7 @@ export default function Home() {
                 />
               </div>
               <div className="pt-2">
+                <span className="text-sm font-medium text-[#FF6B6B] mb-2 block">Step 3</span>
                 <h2 className="text-2xl font-bold mb-3 text-zinc-900">Swap Games & Play</h2>
                 <p className="text-zinc-600 leading-relaxed">
                   Meet with a neighbor and swap your games!
