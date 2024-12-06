@@ -1,21 +1,33 @@
-# Next.js + EmailOctopus wait list page
+# GameSwapp - Board Game Exchange Community
 
 ![Page preview](./preview.png)
 
 ## Description:
 
-A ready-to-use Next.js wait list page that helps you capturing potential customer emails using EmailOctopus service.
+GameSwapp (gamesw.app) is an upcoming platform that connects board game enthusiasts to swap their unused games with other players. Join our waitlist to be notified when we launch!
 
-- Designed using Figma
-- Built using powerful technologies: Next.js, Typescript and Tailwind CSS.
-- Mobile responsive
+Key Features:
+- Match with your favorite games
+- Match with nearby board game owners
+- Easy-to-use game listing system 
+- Build your board game collection through trades
+- Connect with local board gaming community
+
+## Technical Details
+
+Built with:
+- Next.js 15
+- TypeScript
+- Tailwind CSS
+- Netlify Forms
+
 
 ## Getting Started
 
 - Clone this repository
 
   ```bash
-  git clone git@github.com:soufianeelc/nextjs-waitlist-page.git
+  git clone https://github.com/AshkiX/gameswapp-waitlist.git
   ```
 
 - Install dependencies
@@ -23,15 +35,10 @@ A ready-to-use Next.js wait list page that helps you capturing potential custome
   pnpm install
   ```
 
-
 ## Deployment
 
-Once you have successfully deployed the project, ensure to set the environment variables as outlined in the `.env.example` file on your hosting platform.
+The site is deployed on Netlify.
 
-If you encounter any issues during this process, please don't hesitate to contact me at: soufiane-elc@outlook.com.
 
-## Support
 
-If you appreciate my work, you can show your support by [buying me a coffee](https://www.buymeacoffee.com/soufianeelc). Your contribution helps keep the momentum going and fuels the creation of more content.
 
-Thank you for your generosity! ☕
