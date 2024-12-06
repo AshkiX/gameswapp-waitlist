@@ -7,11 +7,11 @@ export default function Home() {
     <>
       <Toaster />
 
-      <section className="min-h-screen w-full grid grid-cols-1 md:grid-cols-2">
-        <div className="flex items-center pattern-dots relative overflow-hidden">
+      <section className="min-h-screen w-full grid grid-cols-1 md:grid-cols-12">
+        <div className="md:col-span-5 flex items-center pattern-dots relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-background)] via-transparent to-[var(--color-background)] pointer-events-none" />
           
-          <div className="flex flex-col gap-12 p-8 md:p-16 max-w-xl mx-auto relative">
+          <div className="flex flex-col gap-12 p-8 md:p-12 max-w-xl mx-auto relative">
             {/* List Games */}
             <div className="group">
               <div className="relative p-6 rounded-2xl hover-card transition-all duration-300">
@@ -87,15 +87,56 @@ export default function Home() {
           </div>
         </div>
 
-        <main className="flex flex-col gap-8 justify-center px-6 md:px-16 py-12">
-          <h1 className="heading-xl max-w-lg">
-            Trade, Play, Repeat
-            <br />
-            Your <span className="text-[var(--color-primary)] font-bold">Board Game Exchange</span> Launches Soon!
-          </h1>
-          <p className="body-text">
-            Your next favorite game is in someone's closet. Connect and swap with GameSwapp.
-          </p>
+        <main className="md:col-span-7 flex flex-col gap-8 justify-center px-6 md:px-16 py-12">
+          <div className="relative">
+            <h1 className="heading-xl max-w-2xl">
+              <span className="relative inline-block mb-6">
+                <span className="relative z-10">Trade, Play, Repeat</span>
+                <svg
+                  className="absolute -bottom-3 left-0 w-full"
+                  height="8"
+                  viewBox="0 0 300 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M2 5.5C2 5.5 75 5.5 150 5.5C225 5.5 298 5.5 298 5.5"
+                    stroke="var(--color-primary)"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    className="animate-dash"
+                  />
+                </svg>
+              </span>
+              <div className="space-y-2">
+                <span className="block">
+                  Connecting{' '}
+                  <span className="relative inline-block">
+                    <span className="relative z-10 text-[var(--color-primary)] font-bold">
+                      Board Game
+                    </span>
+                    <span 
+                      className="absolute -bottom-2 left-0 right-0 h-3 bg-[var(--color-primary-light)] 
+                      opacity-50 transform -rotate-1 rounded-full blur-sm"
+                    />
+                  </span>
+                  {' '}Lovers
+                </span>
+                <span className="block">
+                  For{' '}
+                  <span className="relative inline-block">
+                    <span className="relative z-10 text-[var(--color-primary)] font-bold">
+                      Easy Swaps
+                    </span>
+                    <span 
+                      className="absolute -bottom-2 left-0 right-0 h-3 bg-[var(--color-primary-light)] 
+                      opacity-50 transform -rotate-1 rounded-full blur-sm"
+                    />
+                  </span>
+                </span>
+              </div>
+            </h1>
+          </div>
 
           <EmailForm />
         </main>

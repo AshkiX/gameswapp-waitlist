@@ -177,6 +177,10 @@ export default function EmailForm() {
         <input type="hidden" name="country_name" value={formState.country_name} />
         
         <div className="flex flex-col gap-2">
+          <p className="text-[var(--color-text-light)] text-sm mb-2">
+            Get notified when we launch in your area.
+          </p>
+
           <div className="flex flex-col gap-2">
             <label className="sr-only" htmlFor="email-address">
               Email address
