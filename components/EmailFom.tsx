@@ -76,11 +76,14 @@ export default function EmailForm() {
   };
 
   const handleCitySelect = (city: City) => {
+    console.log("city selected:", city);
     setFormState(prev => ({
       ...prev,
       city: city.name,
       country: city.country,
+      country_name: city.country
     }));
+    console.log("Form state set to:", formState);
     setSearchTerm(`${city.name}, ${city.country}`);
     setShowSuggestions(false);
   };
@@ -130,6 +133,13 @@ export default function EmailForm() {
     e.preventDefault();
     setFormState(prev => ({ ...prev, isSubmitting: true }));
 
+    // Validate that we have the required data
+    if (!formState.email) {
+      toast.error("Please enter your email address");
+      setFormState(prev => ({ ...prev, isSubmitting: false }));
+      return;
+    }
+
     try {
       const response = await fetch("/", {
         method: "POST",
@@ -137,9 +147,9 @@ export default function EmailForm() {
         body: new URLSearchParams({
           "form-name": "waitlist",
           email: formState.email,
-          city: formState.city,
-          country: formState.country,
-          country_name: formState.country_name,
+          city: formState.city || "", // Ensure we send empty string if no city
+          country: formState.country || "", // Ensure we send empty string if no country
+          country_name: formState.country_name || "", // Ensure we send empty string if no country name
         }).toString(),
       });
 
@@ -152,7 +162,10 @@ export default function EmailForm() {
           isSubmitting: false, 
           isLocating: false 
         });
-        toast.success("Thank you for joining our waitlist! 🚀");
+        setSearchTerm(""); // Clear the search term as well
+        toast.success("Thank you for joining our waitlist! 🚀", {
+          duration: 5000,
+        });
       } else {
         throw new Error("Submission failed");
       }
@@ -189,7 +202,7 @@ export default function EmailForm() {
             <input
               autoComplete="email"
               className="block w-full rounded-[var(--radius-md)] border-2 border-slate-200 px-4 py-2.5 text-[var(--color-text)] placeholder:text-slate-400 focus:border-[var(--color-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-light)] disabled:opacity-50"
-              pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+              pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
               id="email-address"
               name="email"
               placeholder="Email Address (johndoe@example.com)"
