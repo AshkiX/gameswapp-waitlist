@@ -16,7 +16,7 @@ export default function Home() {
               step={1}
               title="List Games You Don't Play"
               description="Look through your games. Pick out the ones you don't play anymore."
-              imageSrc="/shelf.webp"
+              imageSrc="/board-games-stack.webp"
               imageAlt="Board game shelf illustration"
             />
 
@@ -24,7 +24,7 @@ export default function Home() {
               step={2}
               title="Browse Game Offers"
               description="Check out games near you and get matched!"
-              imageSrc="/map.webp"
+              imageSrc="/offers-map.webp"
               imageAlt="Map with board game locations"
             />
 
@@ -32,7 +32,7 @@ export default function Home() {
               step={3}
               title="Swap Games & Play"
               description="Meet with a neighbor and swap your games!"
-              imageSrc="/exchange.webp"
+              imageSrc="/people-swap.webp"
               imageAlt="People exchanging board games"
             />
           </div>
