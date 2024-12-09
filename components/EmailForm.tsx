@@ -3,7 +3,6 @@
 import { Crosshair1Icon } from "@radix-ui/react-icons";
 import { useState, useEffect, useRef } from "react";
 import { toast } from "react-hot-toast";
-import cities from "cities.json";
 import ShareSuccess from "./ShareSuccess";
 
 interface City {
@@ -29,6 +28,14 @@ interface LocationData {
   error?: boolean;
 }
 
+function debounce<F extends (...args: any[]) => any>(func: F, delay: number) {
+  let timeoutId: NodeJS.Timeout;
+  return (...args: Parameters<F>) => {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => func(...args), delay);
+  };
+}
+
 export default function EmailForm() {
   const [formState, setFormState] = useState<FormState>({
     email: "",
@@ -43,6 +50,30 @@ export default function EmailForm() {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const suggestionsRef = useRef<HTMLDivElement>(null);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const debouncedCitySearch = useRef(
+    debounce(async (value: string) => {
+      if (value.length < 2) {
+        setSuggestions([]);
+        setShowSuggestions(false);
+        return;
+      }
+
+      setIsLoading(true);
+      try {
+        const response = await fetch(`/api/cities?q=${encodeURIComponent(value)}&limit=5`);
+        const data = await response.json();
+        setSuggestions(data.cities);
+        setShowSuggestions(data.cities.length > 0);
+      } catch (error) {
+        console.error('City search error:', error);
+        setSuggestions([]);
+      } finally {
+        setIsLoading(false);
+      }
+    }, 300)
+  ).current;
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -62,20 +93,7 @@ export default function EmailForm() {
   const handleCitySearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setSearchTerm(value);
-
-    if (value.length > 1) {
-      const filteredCities = (cities as City[])
-        .filter(city => 
-          city.name.toLowerCase().startsWith(value.toLowerCase())
-        )
-        .slice(0, 5);
-
-      setSuggestions(filteredCities);
-      setShowSuggestions(true);
-    } else {
-      setSuggestions([]);
-      setShowSuggestions(false);
-    }
+    debouncedCitySearch(value);
   };
 
   const handleCitySelect = (city: City) => {
@@ -242,21 +260,31 @@ export default function EmailForm() {
                 <Crosshair1Icon className={`h-5 w-5 ${formState.isLocating ? 'animate-pulse' : ''}`} />
               </button>
             </div>
-            {showSuggestions && suggestions.length > 0 && (
+            {showSuggestions && (
               <div 
                 ref={suggestionsRef}
                 className="absolute z-10 w-full mt-1 bg-white rounded-[var(--radius-md)] border border-slate-200 shadow-lg max-h-60 overflow-auto"
               >
-                {suggestions.map((city, index) => (
-                  <button
-                    key={`${city.name}-${city.country}-${index}`}
-                    type="button"
-                    className="w-full text-left px-4 py-2.5 hover:bg-slate-50 focus:bg-slate-50 focus:outline-none text-sm"
-                    onClick={() => handleCitySelect(city)}
-                  >
-                    {city.name}, {city.country}
-                  </button>
-                ))}
+                {isLoading ? (
+                  <div className="p-4 text-center text-slate-500">
+                    Searching cities...
+                  </div>
+                ) : suggestions.length > 0 ? (
+                  suggestions.map((city, index) => (
+                    <button
+                      key={`${city.name}-${city.country}-${index}`}
+                      type="button"
+                      className="w-full text-left px-4 py-2 hover:bg-slate-100 focus:bg-slate-100 focus:outline-none"
+                      onClick={() => handleCitySelect(city)}
+                    >
+                      {city.name}, {city.country}
+                    </button>
+                  ))
+                ) : (
+                  <div className="p-4 text-center text-slate-500">
+                    No cities found
+                  </div>
+                )}
               </div>
             )}
           </div>
