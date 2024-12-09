@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter_Tight, Outfit } from "next/font/google";
 import "./globals.css";
+import { GoogleAnalyticsTracker } from '@/components/GoogleAnalytics';
 
 const inter = Inter_Tight({ subsets: ["latin"] });
 const outfit = Outfit({ 
@@ -28,6 +29,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className} ${outfit.variable} min-h-full`}>
         {children}
+        <GoogleAnalyticsTracker measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || ''} />
       </body>
     </html>
   );
