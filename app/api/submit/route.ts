@@ -1,32 +1,40 @@
 export async function POST(request: Request) {
-  const { email } = await request.json();
+  const { email, city, country, country_name } = await request.json();
 
   try {
     const response = await fetch(
-      `https://emailoctopus.com/api/1.6/lists/${process.env.LIST_ID}/contacts`,
+      'https://post2sheets-waitlist-gamesw-app.arashk-knj.workers.dev', 
       {
-        method: "POST",
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          api_key: `${process.env.EMAILOCTOPUS_KEY}`,
-          email_address: email,
+          email,
+          city,
+          country,
+          country_name,
         }),
       }
     );
 
-    if (response.status === 200) {
-      return new Response("Email submitted successfully!", {
+    if (response.ok) {
+      return new Response(JSON.stringify({ message: 'Email submitted successfully!' }), {
         status: 200,
+        headers: { 'Content-Type': 'application/json' },
       });
     } else {
-      return new Response("Failed to submit email!", {
+      const errorData = await response.text();
+      return new Response(JSON.stringify({ message: 'Failed to submit email', error: errorData }), {
         status: response.status,
-        statusText: response.statusText,
+        headers: { 'Content-Type': 'application/json' },
       });
     }
   } catch (error) {
-    return new Response("Internal server error", { status: 500 });
+    console.error('Submission error:', error);
+    return new Response(JSON.stringify({ message: 'Internal server error', error: String(error) }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json' },
+    });
   }
 }

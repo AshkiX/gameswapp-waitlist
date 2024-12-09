@@ -143,16 +143,15 @@ export default function EmailForm() {
     }
 
     try {
-      const response = await fetch("/", {
+      const response = await fetch("/api/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams({
-          "form-name": "waitlist",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
           email: formState.email,
           city: formState.city || "",
           country: formState.country || "",
           country_name: formState.country_name || "",
-        }).toString(),
+        }),
       });
 
       if (response.ok) {
@@ -167,11 +166,12 @@ export default function EmailForm() {
         setSearchTerm("");
         setIsSuccess(true);
       } else {
-        throw new Error("Submission failed");
+        const errorData = await response.json();
+        throw new Error(errorData.message || "Submission failed");
       }
     } catch (err) {
       console.error(err);
-      toast.error("Oops! Something went wrong!");
+      toast.error(err instanceof Error ? err.message : "Oops! Something went wrong!");
       setFormState(prev => ({ ...prev, isSubmitting: false }));
     }
   };
@@ -188,18 +188,11 @@ export default function EmailForm() {
     <>
       <form 
         onSubmit={handleSubmit} 
-        method="POST" 
         className="mt-8 max-w-md min-h-[400px]"
-        data-netlify="true"
-        name="waitlist"
       >
-        <input type="hidden" name="form-name" value="waitlist" />
-        <input type="hidden" name="country" value={formState.country} />
-        <input type="hidden" name="country_name" value={formState.country_name} />
-        
         <div className="space-y-4">
           <h2 className="text-lg font-light text-[var(--color-text)]">
-            Get notified when we launch in your area.
+            Get notified when we launch in your area. We are working to bring this experience to you as soon as possible!
           </h2>
 
           {/* Email Input */}
