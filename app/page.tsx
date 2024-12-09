@@ -1,6 +1,16 @@
-import EmailForm from "@/components/EmailFom";
-import { Toaster } from "react-hot-toast";
-import Card from "@/components/Card";
+import dynamic from "next/dynamic";
+
+const EmailForm = dynamic(() => import('@/components/EmailForm'), {
+  loading: () => <p>Loading form...</p>
+})
+
+const Card = dynamic(() => import('@/components/Card'), {
+  loading: () => <div className="placeholder-card">Loading...</div>
+})
+
+const Toaster = dynamic(
+  () => import('react-hot-toast').then((mod) => mod.Toaster)
+)
 
 export default function Home() {
   return (

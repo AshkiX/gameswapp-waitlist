@@ -3,10 +3,16 @@ import { Inter_Tight, Outfit } from "next/font/google";
 import "./globals.css";
 import { GoogleAnalyticsTracker } from '@/components/GoogleAnalytics';
 
-const inter = Inter_Tight({ subsets: ["latin"] });
+const inter = Inter_Tight({ 
+  subsets: ["latin"],
+  display: "swap",
+  preload: true,
+});
 const outfit = Outfit({ 
   subsets: ["latin"],
   variable: '--font-outfit',
+  display: "swap",
+  preload: true,
 });
 
 export const metadata: Metadata = {

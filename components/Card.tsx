@@ -20,7 +20,9 @@ export default function Card({ step, title, description, imageSrc, imageAlt }: C
               alt={imageAlt}
               fill
               className="object-contain"
-              priority={step === 1}
+              priority={true}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              quality={75}
             />
           </div>
           <div className="flex flex-col justify-between py-1 text-center md:text-left">
