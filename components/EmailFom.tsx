@@ -1,8 +1,10 @@
 "use client";
-import { InfoCircledIcon, Crosshair1Icon } from "@radix-ui/react-icons";
+
+import { Crosshair1Icon } from "@radix-ui/react-icons";
 import { useState, useEffect, useRef } from "react";
 import { toast } from "react-hot-toast";
 import cities from "cities.json";
+import ShareSuccess from "./ShareSuccess";
 
 interface City {
   name: string;
@@ -40,6 +42,7 @@ export default function EmailForm() {
   const [suggestions, setSuggestions] = useState<City[]>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const suggestionsRef = useRef<HTMLDivElement>(null);
+  const [isSuccess, setIsSuccess] = useState(false);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -133,7 +136,6 @@ export default function EmailForm() {
     e.preventDefault();
     setFormState(prev => ({ ...prev, isSubmitting: true }));
 
-    // Validate that we have the required data
     if (!formState.email) {
       toast.error("Please enter your email address");
       setFormState(prev => ({ ...prev, isSubmitting: false }));
@@ -147,9 +149,9 @@ export default function EmailForm() {
         body: new URLSearchParams({
           "form-name": "waitlist",
           email: formState.email,
-          city: formState.city || "", // Ensure we send empty string if no city
-          country: formState.country || "", // Ensure we send empty string if no country
-          country_name: formState.country_name || "", // Ensure we send empty string if no country name
+          city: formState.city || "",
+          country: formState.country || "",
+          country_name: formState.country_name || "",
         }).toString(),
       });
 
@@ -162,10 +164,8 @@ export default function EmailForm() {
           isSubmitting: false, 
           isLocating: false 
         });
-        setSearchTerm(""); // Clear the search term as well
-        toast.success("Thank you for joining our waitlist! 🚀", {
-          duration: 5000,
-        });
+        setSearchTerm("");
+        setIsSuccess(true);
       } else {
         throw new Error("Submission failed");
       }
@@ -175,6 +175,14 @@ export default function EmailForm() {
       setFormState(prev => ({ ...prev, isSubmitting: false }));
     }
   };
+
+  const handleReset = () => {
+    setIsSuccess(false);
+  };
+
+  if (isSuccess) {
+    return <ShareSuccess onReset={handleReset} />;
+  }
 
   return (
     <>
