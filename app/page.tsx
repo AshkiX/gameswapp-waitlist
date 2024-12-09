@@ -1,8 +1,6 @@
 import EmailForm from "@/components/EmailFom";
-import Image from "next/image";
 import { Toaster } from "react-hot-toast";
 import Card from "@/components/Card";
-import ShareSuccess from "@/components/ShareSuccess";
 
 export default function Home() {
   return (
@@ -92,7 +90,6 @@ export default function Home() {
           </div>
 
           <EmailForm />
-          {/* <ShareSuccess />  */}
         </main>
       </section>
     </>

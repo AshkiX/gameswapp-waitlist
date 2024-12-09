@@ -29,7 +29,7 @@ export default function ShareSuccess({ onReset }: { onReset?: () => void }) {
   };
 
   return (
-    <div className="mt-8 max-w-md">
+    <div className="mt-8 max-w-md min-h-[400px]">
       <div className="space-y-6">
         <div className="space-y-2">
           <h2 className="heading-lg">You're on the list! 🎉</h2>

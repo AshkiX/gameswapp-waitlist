@@ -189,7 +189,7 @@ export default function EmailForm() {
       <form 
         onSubmit={handleSubmit} 
         method="POST" 
-        className="mt-8 max-w-md"
+        className="mt-8 max-w-md min-h-[400px]"
         data-netlify="true"
         name="waitlist"
       >
