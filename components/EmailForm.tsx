@@ -1,9 +1,10 @@
 "use client";
 
-import { Crosshair1Icon } from "@radix-ui/react-icons";
+import { Crosshair1Icon, ExternalLinkIcon } from "@radix-ui/react-icons";
 import { useState, useEffect, useRef } from "react";
 import { toast } from "react-hot-toast";
 import ShareSuccess from "./ShareSuccess";
+import Link from 'next/link';
 
 interface City {
   name: string;
@@ -287,6 +288,30 @@ export default function EmailForm() {
                 )}
               </div>
             )}
+          </div>
+
+          {/* Privacy Policy and Terms & Conditions Links */}
+          <div className="text-xs text-gray-500 text-center flex justify-center items-center gap-1">
+            By joining our waitlist, you agree to our{' '}
+            <Link 
+              href="/privacy-policy" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-[var(--color-primary)] transition-colors flex items-center gap-0.5"
+            >
+              Privacy Policy
+              <ExternalLinkIcon className="w-3 h-3" />
+            </Link>{' '}
+            and{' '}
+            <Link 
+              href="/terms-conditions" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-[var(--color-primary)] transition-colors flex items-center gap-0.5"
+            >
+              Terms & Conditions
+              <ExternalLinkIcon className="w-3 h-3" />
+            </Link>
           </div>
 
           {/* Submit Button */}
