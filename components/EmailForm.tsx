@@ -291,7 +291,7 @@ export default function EmailForm() {
           </div>
 
           {/* Privacy Policy and Terms & Conditions Links */}
-          <div className="text-xs text-gray-500 text-center flex justify-center items-center gap-1">
+          <div className="text-xs text-gray-500 text-left flex items-center gap-1 flex-wrap">
             By joining our waitlist, you agree to our{' '}
             <Link 
               href="/privacy-policy" 
@@ -312,6 +312,7 @@ export default function EmailForm() {
               Terms & Conditions
               <ExternalLinkIcon className="w-3 h-3" />
             </Link>
+            .
           </div>
 
           {/* Submit Button */}
