@@ -184,6 +184,18 @@ export default function EmailForm() {
         });
         setSearchTerm("");
         setIsSuccess(true);
+
+        // Send 'signup' event to Google Analytics
+        if (typeof window !== 'undefined' && window.gtag) {
+          window.gtag('event', 'signup', {
+            city: formState.city,
+            country: formState.country,
+            country_name: formState.country_name,
+          });
+          console.log("Signup event sent to Google Analytics");
+        } else {
+          console.log("Google Analytics not found");
+        }
       } else {
         const errorData = await response.json();
         throw new Error(errorData.message || "Submission failed");
