@@ -186,8 +186,8 @@ export default function EmailForm() {
         setIsSuccess(true);
 
         // Send 'signup' event to Google Analytics
-        if (typeof window !== 'undefined' && window.gtag) {
-          window.gtag('event', 'signup', {
+        if (typeof window !== 'undefined' && 'gtag' in window) {
+          (window as any).gtag('event', 'signup', {
             city: formState.city,
             country: formState.country,
             country_name: formState.country_name,
